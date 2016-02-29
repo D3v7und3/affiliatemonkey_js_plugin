@@ -1,0 +1,45 @@
+<div class="affiliatemonkey-widget">
+    <style>
+        .affiliatemonkey-widget{
+            display:flex;
+            max-width: 600px;
+            width: auto;
+            /*border: 1px solid #DDD;*/
+            border-radius: 5px;
+            flex-direction: row;
+            -webkit-flex-wrap: wrap; /* Safari */
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .affiliatemonkey-widget-box{
+            padding:10px;
+        }
+
+        .affiliatemonkey-widget-box, .affiliatemonkey-widget-item{
+            /*flex: 0 0 5em;*/
+        }
+
+        .affiliatemonkey-image{
+            max-width:100px;
+            max-height:130px;
+        }
+
+        .affiliatemonkey-label > a{
+            text-decoration: none;
+        }
+    </style>
+    {{#products}}
+    <div class="affiliatemonkey-widget-box affiliatemonkey-widget-item">
+        <div class="affiliatemonkey-image">
+            <center>
+                <a href="{{aff_link}}" rel="nofollow" target="_blank"><img src="{{image}}" class="affiliatemonkey-item" style="max-width:100px;max-height:130px;"/></a>
+            </center>
+        </div>
+        <div class="affiliatemonkey-label">
+            <a href="{{aff_link}}" target="_blank" rel="nofollow"><span style="font-size:small;color: #939898;">{{currency}}{{price}}</span></a>
+        </div>
+    </div>
+    {{/products}}
+   
+</div>

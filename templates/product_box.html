@@ -1,0 +1,261 @@
+<div class='monkeywidget'>
+  <style>
+  .monkeywidget {
+    /*font-family: 'Open Sans', sans-serif;*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 16px;
+
+    height: auto;
+    max-width: 450px;
+    width:auto;
+    border: solid 1px #EAEAEA;
+    border-radius: 2%;
+    overflow: hidden;
+
+    padding-top: 0.94rem;
+    padding-bottom: 0.94rem;
+
+  }
+
+  .monkeywidget > * {
+    padding-left: 1.12rem;
+    padding-right: 1.12rem;
+  }
+
+  .monkeywidget_itempricing {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    padding-top: 0px;
+
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    flex-shrink: 0;
+
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  .monkeywidget > .monkeywidget_itemdetails {
+    -webkit-flex: 2 1 auto;
+    text-align: left;
+    flex: 2 1 auto;
+    width: auto;
+  }
+
+  .monkeywidget > .monkeywidget_itempricing > * {
+    padding: 0px;
+    margin: 0px;
+    font-size: 13px;
+  }
+  .monkeywidget > .monkeywidget_imageitem {
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+    border: 10px;
+    position: center;
+  }
+
+  /*large*/
+  @media screen and (min-width: 800px) {
+    .monkeywidget {
+      -webkit-flex-flow: row ;
+      flex-flow: row ;
+    }
+    .monkeywidget > .monkeywidget_imageitem { order: 1; }
+    .monkeywidget > .monkeywidget_itemdetails    { order: 1;}
+    .monkeywidget > .monkeywidget_itempricing {
+      order: 3;
+      -webkit-flex-flow: column ;
+      flex-flow: column ;
+      align-items: center;
+      }
+   }
+
+  /*medium*/
+  @media screen and (max-width: 800px) and (min-width: 500px) {
+    .monkeywidget > .monkeywidget_imageitem { order: 1; }
+
+    .monkeywidget > .monkeywidget_itempricing {
+      order: 3;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+
+      justify-content: space-around;
+      width: 100%;
+
+      vertical-align: middle;
+
+      border-top: solid 1px #eaeaea;
+      padding-bottom: 0.75rem;
+      padding-top: 0.75rem;
+      padding-left: 0px;
+      padding-right: 0px;
+      }
+
+    .monkeywidget > .monkeywidget_itemdetails {
+      order: 1;
+      flex: 2 60%;
+    }
+
+
+  }
+
+
+  /*small*/
+  @media screen and (max-width: 499px) {
+    .monkeywidget{
+      align-content: center;
+       }
+    .monkeywidget > .monkeywidget_imageitem {
+      order: 1;
+      align-items: center;
+    }
+
+    .monkeywidget > .monkeywidget_itempricing {
+      order: 3;
+      -webkit-flex-flow: column;
+      flex-flow: column;
+      align-items: center;
+      width: 100%;
+      vertical-align: middle;
+
+      border-top: solid 1px #eaeaea;
+     }
+
+    .monkeywidget > .monkeywidget_itemdetails {
+      order: 2;
+      flex: 1;
+      width: 66%;
+      }
+  }
+  .monkeywidget_description{
+      font-weight:200;
+  }
+  .monkeywidget_headlinelink {
+    line-height: inherit;
+    text-decoration: none;
+    color: #939898;
+    font-size: 1.31rem;
+    text-align: left!important;
+  }
+
+  .monkeywidget_headlinelink:hover {
+    text-decoration: none;
+    color: #000;
+    line-height: inherit;
+  }
+
+  .monkeywidget_storename{
+    font-size: 0.88rem;
+    line-height: 1rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 95%;
+    padding: 0px;
+    margin: 0px;
+    font-weight: 200;
+    color:#939898;;
+  }
+
+  .monkeywidget_social-proof {
+    display: inline;
+    font-weight: bold;
+    color: #000;
+  }
+  .monkeywidget_headline {
+  }
+
+  .monkeywidget_disclosure {
+    font-size: 0.78rem;
+    line-height: 1.2;
+    font-weight: 200;
+  }
+
+  .monkeywidget_buybutton {
+    line-height: 24px;
+    text-align: center;
+    flex-shrink: 0;
+
+    margin: 0;
+    padding: 0;
+
+    font-style: normal;
+    font-weight: normal;
+    color: #000;
+  }
+
+
+  .monkeywidget_button {
+    background-color: inherit;
+    color:#FFA623;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #FFA623;
+    border-radius: 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    /** border: transparent 1px solid; */
+    letter-spacing: 0.5px;
+
+    padding-left: 1.65rem;
+    padding-right: 1.65rem;
+
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+
+    box-shadow: none;
+  }
+  a.monkeywidget_button {
+      box-shadow: none;
+  }
+
+
+
+  .monkeywidget_button:hover {
+    color: #FFFFFF;
+    background-color: #FFA623;
+    text-decoration: none;
+  }
+  .monkeywidget_price{
+      color:#939898;
+  }
+</style>
+  <div class='monkeywidget_imageitem'>
+    <a target="_blank" rel="nofollow" href="{{aff_link}}">
+    <img style='max-width:100px;max-height:130px;' src='{{image}}' alt='Sebago Dockside'></a>
+  </div>
+  <div class='monkeywidget_itemdetails'>
+    <span class='monkeywidget_headline'>
+      <a target='_blank' data-destination='#' data-partner-id='#' data-source-app='product-box' rel="nofollow" class='monkeywidget_headlinelink affmonkey-trackable-link' href='{{aff_link}}'>
+     {{title}}</a></h6>
+    </span>
+
+  </div>
+
+  <div class='monkeywidget_itempricing'>
+    <div class='monkeywidget_price'><span> {{currency}}{{price}}</span></div>
+    <div class='monkeywidget_buybutton'>
+      <a target='_blank' data-destination='#' data-partner-id='3' data-source-app='product-box' class='monkeywidget_button affmonkey-trackable-link' href='{{aff_link}}' rel="nofollow">Shop Now</a>
+    </div>
+    <div class='monkeywidget_storename'>on {{store_name}}</div>
+  </div>
+</div>
