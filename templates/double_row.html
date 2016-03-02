@@ -1,45 +1,21 @@
-<div class="affiliatemonkey-widget">
-    <style>
-        .affiliatemonkey-widget{
-            display:flex;
-            max-width: 600px;
-            width: auto;
-            /*border: 1px solid #DDD;*/
-            border-radius: 5px;
-            flex-direction: row;
-            -webkit-flex-wrap: wrap; /* Safari */
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+    
+    
+    <div class="box">
+        
+        <div class="affiliatemonkey-double-row-widget-box">
+        {{#products}}
+            <div class="affiliatemonkey-double-row-widget-item-box">
+                <div class="affiliatemonkey-double-row-widget-item-image-container">
+                    
+                        <a href="{{aff_link}}" rel="nofollow" target="_blank"><img style="max-width:80px; max-height:100px;" src="{{image}}" class="affiliatemonkey-double-row-item affiliatemonkey-double-row-widget-item-image affmonkey-trackable-link" data-destination='{{url}}' data-partner-id='{{../partner_id}}' data-source-app='single-row' /></a>
+                    
+                </div>
 
-        .affiliatemonkey-widget-box{
-            padding:10px;
-        }
-
-        .affiliatemonkey-widget-box, .affiliatemonkey-widget-item{
-            /*flex: 0 0 5em;*/
-        }
-
-        .affiliatemonkey-image{
-            max-width:100px;
-            max-height:130px;
-        }
-
-        .affiliatemonkey-label > a{
-            text-decoration: none;
-        }
-    </style>
-    {{#products}}
-    <div class="affiliatemonkey-widget-box affiliatemonkey-widget-item">
-        <div class="affiliatemonkey-image">
-            <center>
-                <a href="{{aff_link}}" rel="nofollow" target="_blank"><img src="{{image}}" class="affiliatemonkey-item" style="max-width:100px;max-height:130px;"/></a>
-            </center>
+                <div class="affiliatemonkey-double-row-widget-item-label" style="text-align: center;">
+                    <a href="{{aff_link}}" target="_blank" class='affmonkey-trackable-link' rel="nofollow" data-destination='{{url}}' data-partner-id='{{../partner_id}}' data-source-app='single-row'><span style="font-size:small;color: #939898;">{{currency}}{{money}}</span></a>
+                </div>
+            </div>
+        {{/products}}
         </div>
-        <div class="affiliatemonkey-label">
-            <a href="{{aff_link}}" target="_blank" rel="nofollow"><span style="font-size:small;color: #939898;">{{currency}}{{price}}</span></a>
-        </div>
+
     </div>
-    {{/products}}
-   
-</div>

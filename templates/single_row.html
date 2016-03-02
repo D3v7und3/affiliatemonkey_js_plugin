@@ -1,80 +1,21 @@
-
-
+    
+    
+    <div class="box">
         
-<div class="affiliatemonkey-widget">
-    <style type="text/css">
-        .affiliatemonkey-widget{
-            display:flex;
-            flex-direction: row;
-            max-width: 625px;
-            width: auto;
-           /* border: 1px solid #939898;*/
-            border-radius: 10px;
-            overflow: hidden;
-        }
+        <div class="affiliatemonkey-single-row-widget-box">
+        {{#products}}
+            <div class="affiliatemonkey-single-row-widget-item-box">
+                <div class="affiliatemonkey-single-row-widget-item-image-container">
+                    <center>
+                        <a href="{{aff_link}}" rel="nofollow" target="_blank"><img style="max-width:80px; max-height:100px;" src="{{image}}" class="affiliatemonkey-item affiliatemonkey-single-row-widget-item-image affmonkey-trackable-link" data-destination='{{url}}' data-partner-id='{{../partner_id}}' data-source-app='single-row' /></a>
+                    </center>   
+                </div>
 
-        .affiliatemonkey-widget-box{
-            flex:1;
-            padding:10px;
-        }
-
-        .affiliatemonkey-widget-box, .affiliatemonkey-widget-item{
-            flex: 0 0 10em;
-        }
-
-        .affiliatemonkey-image{
-            max-width:100px;
-            max-height:130px;
-            /*margin-left: 10px;*/
-        }
-
-        .affiliatemonkey-label > a{
-            text-decoration: none;
-        }
-
-        /*small*/
-        @media (min-width: 200px) and (max-width: 499px) {
-            .affiliatemonkey-widget{
-                display:flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-                /*border: 1px solid #939898;*/
-                border-radius: 10px;
-                overflow: hidden;
-                justify-content: center;
-            }
-
-            .affiliatemonkey-widget-box, .affiliatemonkey-widget-item{
-                flex: 0 0 10em;
-            }
-        }
-
-        /*large*/
-        @media screen and (min-width: 639px) {
-            .affiliatemonkey-widget{
-                display:flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-                flex-flow: row;
-                /*border: 1px solid #939898;*/
-                border-radius: 10px;
-                overflow: hidden;
-                justify-content: center;
-                align-content: center;
-            }
-        }
-    </style>
-    {{#products}}
-    <div class="affiliatemonkey-widget-box affiliatemonkey-widget-item">
-        <div class="affiliatemonkey-image">
-            <center>
-                <a href="{{aff_link}}" rel="nofollow" target="_blank"><img src="{{image}}" class="affiliatemonkey-item" style="max-width:100px;max-height:130px;"/></a>
-            </center>
+                <div class="affiliatemonkey-single-row-widget-item-label" style="text-align: center;">
+                    <a href="{{aff_link}}" target="_blank" class='affmonkey-trackable-link' rel="nofollow" data-destination='{{url}}' data-partner-id='{{../partner_id}}' data-source-app='single-row'><span style="font-size:small;color: #939898;">{{currency}}{{money}}</span></a>
+                </div>
+            </div>
+        {{/products}}
         </div>
-        <div class="affiliatemonkey-label">
-            <a href="{{aff_link}}" target="_blank" rel="nofollow"><span style="font-size:small;color: #939898;">{{currency}}{{price}}</span></a>
-        </div>
+
     </div>
-    {{/products}}
-
-</div>

@@ -7,7 +7,7 @@ define(["jquery", "libs/endpoints"], function($, api){
 
 		var url_with_params = api.impression_url + "?url=" + current_url;
 
-		alert(url_with_params);
+		// alert(url_with_params);
 
 		$.ajax({
 	    	type: 'GET',

@@ -6,26 +6,42 @@ require.config(
 			 }
 		});
 
-require(["widgets/product_box",
- "widgets/single_row", "jquery",
-  "widgets/double_row", "widgets/impression"], function(renderProductBox, renderSingleRow, jquery, renderDoubleRow, impression){
-	
+require(["text!stylesheet/style.css", "widgets/render_widget", "jquery", "widgets/impression"], 
+  function(css, renderWidget, jquery, impression){
 
-	// registerImpression();
-	// renderSingleRow();
-	var els = $(".test_container");
+  	//inject css into the page
+  	var head = document.head || document.getElementsByTagName('head')[0];
+    var style = document.createElement('style');
 
-	// renderDoubleRow(els);
+	style.type = 'text/css';
+	if (style.styleSheet){
+	  style.styleSheet.cssText = css;
+	} else {
+	  style.appendChild(document.createTextNode(css));
+	}
 
-	// renderSingleRow(els);
-
-	// if(els){
-
-	// }
+	head.appendChild(style);
 
 
-	renderProductBox(els);
-	
+	$(".affmonkey-product-box-widget").each(function(index){
+		
+		renderWidget(this, "product-box");
+	})
+
+
+	$(".affmonkey-product-card-widget").each(function(index){
+		renderWidget(this, "product-card");
+	})
+
+	$(".affmonkey-single-row-widget").each(function(index){
+		renderWidget(this, "single-row");
+	})
+
+	$(".affmonkey-double-row-widget").each(function(index){
+		renderWidget(this, "double-row");
+	})
+
+	//send impression
 	impression();
 
 });

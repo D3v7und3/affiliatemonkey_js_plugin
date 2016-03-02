@@ -14,9 +14,9 @@
     font-size: 16px;
 
     height: auto;
-    max-width: 450px;
+    max-width: {{style.box_size}};
     width:auto;
-    border: solid 1px #EAEAEA;
+    border: solid {{style.border_size}} {{style.border_color}};
     border-radius: 2%;
     overflow: hidden;
 
@@ -30,36 +30,38 @@
     padding-right: 1.12rem;
   }
 
-  .monkeywidget_itempricing {
+  .monkeywidget_product_box_itempricing {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    position: relative;
+    top: 2em;
 
     padding-top: 0px;
 
     -webkit-flex-flow: column wrap;
     flex-flow: column wrap;
-    flex-shrink: 0;
+    
 
     align-items: center;
     vertical-align: middle;
   }
 
-  .monkeywidget > .monkeywidget_itemdetails {
+  .monkeywidget > .monkeywidget_product_box_itemdetails {
     -webkit-flex: 2 1 auto;
     text-align: left;
     flex: 2 1 auto;
     width: auto;
   }
 
-  .monkeywidget > .monkeywidget_itempricing > * {
+  .monkeywidget > .monkeywidget_product_box_itempricing > * {
     padding: 0px;
     margin: 0px;
     font-size: 13px;
   }
-  .monkeywidget > .monkeywidget_imageitem {
+  .monkeywidget > .monkeywidget_product_box_imageitem {
     width: auto;
     height: auto;
     flex-shrink: 0;
@@ -73,9 +75,9 @@
       -webkit-flex-flow: row ;
       flex-flow: row ;
     }
-    .monkeywidget > .monkeywidget_imageitem { order: 1; }
-    .monkeywidget > .monkeywidget_itemdetails    { order: 1;}
-    .monkeywidget > .monkeywidget_itempricing {
+    .monkeywidget > .monkeywidget_product_box_imageitem { order: 1; }
+    .monkeywidget > .monkeywidget_product_box_itemdetails    { order: 1;}
+    .monkeywidget > .monkeywidget_product_box_itempricing {
       order: 3;
       -webkit-flex-flow: column ;
       flex-flow: column ;
@@ -85,9 +87,9 @@
 
   /*medium*/
   @media screen and (max-width: 800px) and (min-width: 500px) {
-    .monkeywidget > .monkeywidget_imageitem { order: 1; }
+    .monkeywidget > .monkeywidget_product_box_imageitem { order: 1; }
 
-    .monkeywidget > .monkeywidget_itempricing {
+    .monkeywidget > .monkeywidget_product_box_itempricing {
       order: 3;
       -webkit-flex-flow: row wrap;
       flex-flow: row wrap;
@@ -101,15 +103,18 @@
       vertical-align: middle;
 
       border-top: solid 1px #eaeaea;
-      padding-bottom: 0.75rem;
-      padding-top: 0.75rem;
-      padding-left: 0px;
-      padding-right: 0px;
+      
+      padding-top: 0.85rem;
+      padding-bottom: 2rem;
       }
 
-    .monkeywidget > .monkeywidget_itemdetails {
+    .monkeywidget > .monkeywidget_product_box_itemdetails {
       order: 1;
       flex: 2 60%;
+    }
+
+    .monkeywidget > * {
+      padding: 0px;
     }
 
 
@@ -121,12 +126,12 @@
     .monkeywidget{
       align-content: center;
        }
-    .monkeywidget > .monkeywidget_imageitem {
+    .monkeywidget > .monkeywidget_product_box_imageitem {
       order: 1;
       align-items: center;
     }
 
-    .monkeywidget > .monkeywidget_itempricing {
+    .monkeywidget > .monkeywidget_product_box_itempricing {
       order: 3;
       -webkit-flex-flow: column;
       flex-flow: column;
@@ -137,16 +142,46 @@
       border-top: solid 1px #eaeaea;
      }
 
-    .monkeywidget > .monkeywidget_itemdetails {
+    .monkeywidget > .monkeywidget_product_box_itemdetails {
       order: 2;
-      flex: 1;
       width: 66%;
+      padding:5px;
+      text-align: center;
       }
+
+      .monkeywidget_product_box_imageitem{
+        margin:auto;
+      }
+
+      .monkeywidget_product_box_description{
+        display: none;
+      }
+
+      .monkeywidget > * {
+        /**padding: 0px;**/
+      }
+
+      .monkeywidget_product_box_itemdetails > .monkeywidget_product_box_headline{
+        top:0px;
+      }
+
+      .monkeywidget_product_box_itemdetails{
+        /**padding: 0px;**/
+      }
+
+      .monkeywidget_product_box_itempricing{
+        padding-bottom: 1.5rem;
+        padding-top: 0.2rem;
+      }
+
   }
-  .monkeywidget_description{
-      font-weight:200;
+
+  .monkeywidget_product_box_description{
+      margin: 0px;
+      font-size: small;
   }
-  .monkeywidget_headlinelink {
+
+  .monkeywidget_product_box_headlinelink {
     line-height: inherit;
     text-decoration: none;
     color: #939898;
@@ -154,13 +189,13 @@
     text-align: left!important;
   }
 
-  .monkeywidget_headlinelink:hover {
+  .monkeywidget_product_box_headlinelink:hover {
     text-decoration: none;
     color: #000;
     line-height: inherit;
   }
 
-  .monkeywidget_storename{
+  .monkeywidget_product_box_storename{
     font-size: 0.88rem;
     line-height: 1rem;
     text-align: center;
@@ -174,21 +209,23 @@
     color:#939898;;
   }
 
-  .monkeywidget_social-proof {
+  .monkeywidget_product_box_social-proof {
     display: inline;
     font-weight: bold;
     color: #000;
   }
-  .monkeywidget_headline {
+  .monkeywidget_product_box_headline {
+    position: relative;
+    top: 2em;
   }
 
-  .monkeywidget_disclosure {
+  .monkeywidget_product_box_disclosure {
     font-size: 0.78rem;
     line-height: 1.2;
     font-weight: 200;
   }
 
-  .monkeywidget_buybutton {
+  .monkeywidget_product_box_buybutton {
     line-height: 24px;
     text-align: center;
     flex-shrink: 0;
@@ -202,20 +239,23 @@
   }
 
 
-  .monkeywidget_button {
+  .monkeywidget_product_box_button {
     background-color: inherit;
-    color:#FFA623;
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid #FFA623;
+    color: {{style.button_text_color}};
+    /**height: 40px;
+    line-height: 40px;**/
+    border: 1px solid {{style.button_color}};
     border-radius: 20px;
-    font-size: 1rem;
+    font-size: 13px;
     text-transform: uppercase;
     /** border: transparent 1px solid; */
     letter-spacing: 0.5px;
 
-    padding-left: 1.65rem;
-    padding-right: 1.65rem;
+    /**padding-left: 1.65rem;
+    padding-right: 1.65rem;**/
+    padding:5px;
+
+    width:110px;
 
     display: inline-block;
     text-decoration: none;
@@ -224,38 +264,42 @@
 
     box-shadow: none;
   }
-  a.monkeywidget_button {
+  a.monkeywidget_product_box_button {
       box-shadow: none;
   }
 
 
 
-  .monkeywidget_button:hover {
-    color: #FFFFFF;
-    background-color: #FFA623;
+  .monkeywidget_product_box_button:hover {
+    color: {{style.button_text_hover_color}};
+    background-color: {{style.button_hover_color}};
     text-decoration: none;
   }
-  .monkeywidget_price{
+  .monkeywidget_product_box_price{
       color:#939898;
   }
 </style>
-  <div class='monkeywidget_imageitem'>
-    <a target="_blank" rel="nofollow" href="{{aff_link}}">
-    <img style='max-width:100px;max-height:130px;' src='{{image}}' alt='Sebago Dockside'></a>
+  <div class='monkeywidget_product_box_imageitem'>
+    <a target="_blank" class="affmonkey-trackable-link" rel="nofollow" href="{{products.0.aff_link}}" data-destination='{{products.0.url}}' data-partner-id='{{partner_id}}' data-source-app='product-box'>
+    <img style='max-width:100px;max-height:130px;' src='{{products.0.image}}' alt='{{products.0.title}}'></a>
   </div>
-  <div class='monkeywidget_itemdetails'>
-    <span class='monkeywidget_headline'>
-      <a target='_blank' data-destination='#' data-partner-id='#' data-source-app='product-box' rel="nofollow" class='monkeywidget_headlinelink affmonkey-trackable-link' href='{{aff_link}}'>
-     {{title}}</a></h6>
+  <div class='monkeywidget_product_box_itemdetails'>
+    <span class='monkeywidget_product_box_headline'>
+      <a target='_blank' data-destination='{{products.0.url}}' data-partner-id='{{partner_id}}' data-source-app='product-box' rel="nofollow" class='monkeywidget_product_box_headlinelink affmonkey-trackable-link' href='{{products.0.aff_link}}'>
+     {{products.0.title}}</a></h6>
+     <p class="monkeywidget_product_box_description">
+      {{products.0.description}}
+    </p>
     </span>
+    
 
   </div>
 
-  <div class='monkeywidget_itempricing'>
-    <div class='monkeywidget_price'><span> {{currency}}{{price}}</span></div>
-    <div class='monkeywidget_buybutton'>
-      <a target='_blank' data-destination='#' data-partner-id='3' data-source-app='product-box' class='monkeywidget_button affmonkey-trackable-link' href='{{aff_link}}' rel="nofollow">Shop Now</a>
+  <div class='monkeywidget_product_box_itempricing'>
+    <div class='monkeywidget_product_box_price'><span> {{products.0.currency}}{{products.0.money}}</span></div>
+    <div class='monkeywidget_product_box_buybutton'>
+      <a target='_blank' data-destination='{{products.0.url}}' data-partner-id='{{partner_id}}' data-source-app='product-box' class='monkeywidget_product_box_button affmonkey-trackable-link' href='{{products.0.aff_link}}' rel="nofollow">Shop Now</a>
     </div>
-    <div class='monkeywidget_storename'>on {{store_name}}</div>
+    <div class='monkeywidget_product_box_storename'>on {{products.0.store_name}}</div>
   </div>
 </div>

@@ -1,0 +1,242 @@
+.affiliatemonkey-widget-product-card-vertical{
+                        display:flex;
+                        flex-direction: row;
+                        max-width: 240px;
+                        box-shadow:0px 1px 4px 0px #dbdbdb;
+                        border: 1px solid #dbdbdb;
+                        border-radius: 3px;
+                        overflow: hidden;
+                        height: auto;
+                    }
+
+                    .affiliatemonkey-widget-product-card-vertical-box{
+                        flex:1;
+                        padding:5px;
+                    }
+
+                    .affiliatemonkey-widget-product-card-vertical-box, .affiliatemonkey-widget-product-card-vertical-item{
+                        flex: 0 0 5em;
+                    }
+
+                    .affiliatemonkey-image{
+                        max-width:200px;
+                        max-height:200px;
+                        /*margin-left: 10px;*/
+                    }
+
+                    .affiliatemonkey-product-card-vertical-label > a{
+                        text-decoration: none;
+                        float:left;
+                        height:auto;
+                    }
+
+                    /*small*/
+                    @media (min-width: 200px) and (max-width: 499px) {
+                        .affiliatemonkey-widget-product-card-vertical{
+                            display:flex;
+                            flex-wrap: wrap;
+                            flex-direction: row;
+                            border: 1px solid #dbdbdb;
+                            border-radius: 3px;
+                            overflow: hidden;
+                            justify-content: center;
+                            width: 100%;
+                        }
+
+                        .affiliatemonkey-widget-product-card-vertical-box, .affiliatemonkey-widget-product-card-vertical-item{
+                            flex: 0 0 10em;
+                        }
+
+                        .affiliatemonkey-product-card-divider{
+                            color: #FFF;
+                            width: inherit;
+                        }
+
+                        .affiliatemonkey-product-card-buy-button{
+                            margin-right: 0px;
+                        }
+
+                        .affiliatemonkey-product-card-item-remarks{
+                            padding-left:0px;
+                            display: block;
+                            margin-bottom: 0% !important;
+                        }
+
+                        .affiliatemonkey-widget-product-card-vertical-item-description{
+                            padding:0px;
+                        }
+                    }
+
+                    /*large*/
+                    @media screen and (min-width: 639px) {
+                        .affiliatemonkey-widget-product-card-vertical{
+                            display:flex;
+                            flex-wrap: wrap;
+                            flex-direction: row;
+                            flex-flow: row;
+                            border: 1px solid #dbdbdb;
+                            border-radius: 3px;
+                            overflow: hidden;
+                            justify-content: center;
+                            align-content: center;
+                            width:100%;
+                        }
+                    }
+
+                    .affiliatemonkey-product-card-item-storename > a{
+                        color:#939898;
+                        font-size:12px;
+                        text-decoration: none;
+                        float: left;
+                    }
+
+                    .affiliatemonkey-product-card-divider{
+                        color: #FFF;
+                        width: 220px;
+                    }
+
+                    .affiliatemonkey-product-card-item-remarks > a{
+                        color:#000;
+                        float:left;
+                        text-decoration: none;
+                        font-size: 14px;
+                        line-height: 30px;
+                    }
+
+                    .affiliatemonkey-product-card-buy-button{
+                        background-color: inherit;
+                        color:#FFA623;
+                        height: auto;
+                        line-height: 25px;
+                        border: 1px solid #FFA623;
+                        border-radius: 20px;
+                        text-transform: uppercase;
+                        float:right;
+                        display: inline-block;
+                        text-decoration: none;
+                        text-align: center;
+                        position: relative;
+                    }
+
+                    .affiliatemonkey-product-card-buy-button > a > :hover{
+                        color: #FFFFFF;
+                        background-color: #FFA623;
+                        cursor: pointer;
+                    }
+
+                    .affiliatemonkey-product-card-buy-button > a{
+                        text-decoration: none;
+                        color:#FFA623;
+                    }
+
+                    .affiliatemonkey-product-card-item-remarks{
+                        margin-bottom: 22%;
+                    }
+
+                    .affiliatemonkey-product-card-old-price{
+                        font-size: 10px;
+                        text-decoration: line-through;
+                        color: #D87A7A;
+                        display: block;
+                        margin-bottom: -4%;
+                        text-align: left;
+                    }
+                    /*end of product card csss*/
+
+                    .affiliatemonkey-double-row-widget-box{
+                    display:flex;
+                    flex-flow: row;
+                    max-width: 625px;
+                    width: auto;
+                    border-radius: 10px;
+                    overflow: hidden;
+                }
+
+                .affiliatemonkey-double-row-widget-item-box{
+                    margin: 15px;
+                }
+
+                .affiliatemonkey-double-row-widget-item-image-container{
+                    width:80px;
+                    height: 100px;
+                }
+
+                .affiliatemonkey-double-row-widget-item-label > a{
+                    text-decoration: none;
+                }
+
+                /*small*/
+                @media (min-width: 200px) and (max-width: 499px) {
+                    .affiliatemonkey-double-row-widget-box{
+                        display:flex;
+                        flex-wrap: wrap;
+                        flex-direction: row;
+                        overflow: ;
+                        margin: 0px;
+                    }
+
+                    .affiliatemonkey-double-row-widget-box, .affiliatemonkey-double-row-widget-item-box{
+                        flex: 0 0 5em;
+                    }
+                }
+
+                /*large*/
+                @media (min-width: 500px) and (max-width: 636px) {
+                    .affiliatemonkey-double-row-widget-box{
+                        display:flex;
+                        flex-wrap: wrap;
+                        flex-direction: row;
+                        overflow: hidden;
+                    }
+                }
+                /*end of double row css*/
+
+
+                 .affiliatemonkey-single-row-widget-box{
+                    display:flex;
+                    flex-flow: row;
+                    max-width: 625px;
+                    width: auto;
+                    border-radius: 10px;
+                    overflow: hidden;
+                }
+
+                .affiliatemonkey-single-row-widget-item-box{
+                    margin: 15px;
+                }
+
+                .affiliatemonkey-single-row-widget-item-image-container{
+                    width:80px;
+                    height: 100px;
+                }
+
+                .affiliatemonkey-single-row-widget-item-label > a{
+                    text-decoration: none;
+                }
+
+                /*small*/
+                @media (min-width: 200px) and (max-width: 499px) {
+                    .affiliatemonkey-single-row-widget-box{
+                        display:flex;
+                        flex-wrap: wrap;
+                        flex-direction: row;
+                        overflow: ;
+                        margin: 0px;
+                    }
+
+                    .affiliatemonkey-single-row-widget-box, .affiliatemonkey-single-row-widget-item-box{
+                        flex: 0 0 5em;
+                    }
+                }
+
+                /*large*/
+                @media (min-width: 500px) and (max-width: 636px) {
+                    .affiliatemonkey-single-row-widget-box{
+                        display:flex;
+                        flex-wrap: wrap;
+                        flex-direction: row;
+                        overflow: hidden;
+                    }
+                }
+
+                /*end of double row*/
