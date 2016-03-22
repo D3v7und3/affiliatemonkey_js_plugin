@@ -1,12 +1,12 @@
 require.config(
 		{
-			baseurl: "/javascripts",
+			baseurl: "http://affiliatemonkey.co/jsapp",
 			paths : {
 			    jquery : "libs/jquery"
 			 }
 		});
 
-require(["text!stylesheet/style.css", "widgets/render_widget", "jquery", "widgets/impression"], 
+require(["text!style.css", "render_widget", "jquery", "impression"],
   function(css, renderWidget, jquery, impression){
 
   	//inject css into the page
@@ -24,7 +24,7 @@ require(["text!stylesheet/style.css", "widgets/render_widget", "jquery", "widget
 
 
 	$(".affmonkey-product-box-widget").each(function(index){
-		
+
 		renderWidget(this, "product-box");
 	})
 

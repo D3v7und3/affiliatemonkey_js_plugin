@@ -1,9 +1,9 @@
-define(["text!templates/product_box.html", 
-		"text!templates/product_card.html",
-		"text!templates/single_row.html", 
-		"text!templates/double_row.html", 
-		"libs/endpoints", "libs/mustache", 
-		"jquery", "libs/utilities", "widgets/click"],
+define(["text!product_box.html",
+		"text!product_card.html",
+		"text!single_row.html",
+		"text!double_row.html",
+		"endpoints", "mustache",
+		"jquery", "utilities", "click"],
 			function(product_box, product_card, single_row, double_row, api, M, $, utilities, attachClickTracking){
 
 				var controller = {};
@@ -17,7 +17,7 @@ define(["text!templates/product_box.html",
 
 					var exact_match = "no";
 
-					var current_url = window.location.href;
+					var current_url = window.location.protocol + "//" + window.location.hostname + window.location.pathname;
 
 					if($(element).data("exact-match"))
 						exact_match = $(element).data("exact-match");
@@ -41,7 +41,7 @@ define(["text!templates/product_box.html",
 						button_text_color: $(element).data("button-text-color") || "#FFA623",
 						button_text_hover_color: $(element).data("button-text-hover-color") || "#FFFFFF"
 					}
-						
+
 
 					var url_with_params = api.url + "?query=" + title + "&url=" + current_url + exact_match;
 
@@ -50,12 +50,12 @@ define(["text!templates/product_box.html",
 					props["_style"] = _style;
 
 					return props;
-				
+
 				}
 
 
 				controller.itemsBox = function(element, total){
-					var current_url = window.location.href;
+					var current_url = window.location.protocol + "//" + window.location.hostname + window.location.pathname;
 					current_url = current_url.replace("#", "");
 
 
@@ -67,9 +67,9 @@ define(["text!templates/product_box.html",
 					if(utilities.is_home_page(current_url) && !terms)
 						return ;
 
-					
+
 					if(terms){
-						var url_with_params = api.url + "?query=" + encodeURIComponent(terms) + "&terms=yes&url=" + current_url + 
+						var url_with_params = api.url + "?query=" + encodeURIComponent(terms) + "&terms=yes&url=" + current_url +
 						"&total="+total;
 
 					}else{
@@ -117,22 +117,25 @@ define(["text!templates/product_box.html",
 					if(_props["_style"])
 						_style = _props._style;
 
-					alert(request_url);
+					console.log("sending "+request_url+" to the server");
 
 					$.ajax({
 				    	type: 'GET',
 				      	dataType: 'jsonp',
 				      	url: request_url,
 				    }).done(function(data){
-				    	
+							console.log("response arrived from the server");
+
 				    	if(data.status == "OK" && data.products.length > 0){
 				    		//pass the returned data into the template and render here
 				    		var template_tags = data;
 
+								console.log("response was OK");
+
 				    		if(_style)
 				    			template_tags['style'] = _style;
 
-				    		alert(JSON.stringify(data));
+				    		// alert(JSON.stringify(data));
 
 				    		var output = M.render(template, template_tags);
 

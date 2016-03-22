@@ -3,14 +3,14 @@
   <div class="affiliatemonkey-widget-product-card-vertical-box affiliatemonkey-widget-product-card-vertical-item">
                       <div class="affiliatemonkey-image">
                           <center>
-                              <a href="{{products.0.aff_link}}">
+                              <a href="{{products.0.aff_link}}" data-destination='{{products.0.url}}' data-partner-id='{{partner_id}}' data-source-app='product-card'>
                                   <img src="{{products.0.image}}" class="affiliatemonkey-product-card-vertical-item-image" width="100px"/>
                               </a>
                           </center>
                       </div>
                       <div class="affiliatemonkey-widget-product-card-vertical-item-description">
                           <div class="affiliatemonkey-product-card-vertical-label">
-                              <a href="{{products.0.aff_link}}"><span style="font-size:small;color: #939898;">{{products.0.title}}</span></a>
+                              <a href="{{products.0.aff_link}}" data-destination='{{products.0.url}}' data-partner-id='{{partner_id}}' data-source-app='product-card'><span style="font-size:small;color: #939898;">{{products.0.title}}</span></a>
                           </div>
                           <br>
                           <div class="affiliatemonkey-product-card-item-storename">
@@ -20,12 +20,12 @@
                       <br>
                       <hr class="affiliatemonkey-product-card-divider">
                       <div class="affiliatemonkey-product-card-item-remarks">
-                          
+
                             <small class="affiliatemonkey-product-card-old-price">{{products.0.currency}}{{products.0.old_money}}</small>
-                          <a href="{{products.0.aff_link}}" class="price">
+                          <a href="{{products.0.aff_link}}" class="price" data-destination='{{products.0.url}}' data-partner-id='{{partner_id}}' data-source-app='product-card'>
                             <span>{{products.0.currency}}{{products.0.money}}</span>
                         </a>
-                        <button class="affiliatemonkey-product-card-buy-button"><a href="#" class="buy-button">Shop now</a></button>
+                        <button class="affiliatemonkey-product-card-buy-button"><a href="{{products.0.currency}}" class="buy-button">Shop now</a></button>
                       </div>
                   </div>
 </div>
