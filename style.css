@@ -240,3 +240,16 @@
                 }
 
                 /*end of double row*/
+                .affiliatemonkey-product-card-buy-button{
+                    float:right !important;
+                    padding: 3px !important;
+                    font-size: small !important;
+                    color:#FFA623 !important;
+                    border-radius: 20px !important;
+                    width:100px !important;
+                }
+
+                .affiliatemonkey-product-card-buy-button:hover{
+                    background-color: #FFA623 !important;
+                    color:#FFF !important;
+                }
